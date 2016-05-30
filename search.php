@@ -23,7 +23,7 @@ $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
   
 
 //-query  the database table
-$sth = $db->prepare("SELECT  ID,StationName,LocalURL,StreamURL FROM Stationpages WHERE  StationName LIKE '%" . $name .  "%' OR StationType LIKE '%" . $name ."%'");
+$sth = $db->prepare("SELECT  ID,StationName,StreamURL FROM Stationpages WHERE  StationName LIKE '%" . $name .  "%' OR StationType LIKE '%" . $name ."%'");
 //-run  the query against the mysql query function
 $sth->execute();
 
