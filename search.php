@@ -1,7 +1,7 @@
 <?php
-  if(isset($_POST['submit'])){
-  if(isset($_GET['go'])){
-  if(preg_match("/^[a-z|A-Z]+/", $_POST['name'])){  //check form input is text characters
+if(isset($_POST['submit'])){
+if(isset($_GET['go'])){
+if(preg_match("/^[a-z|A-Z]+/", $_POST['name'])){  //check form input is text characters
   $name=$_POST['name'];
   
 //create database credentials
@@ -19,7 +19,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // throws PDOExcep
 $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
   
-echo "Connected successfully";
+// echo "Connected successfully";
   
 
 //-query  the database table
@@ -27,7 +27,7 @@ $sth = $db->prepare("SELECT  ID,StationName,LocalURL,StreamURL FROM Stationpages
 //-run  the query against the mysql query function
 $sth->execute();
 
-echo "<ul>\n results";
+echo "<ul>\n Internet Radio search results";
 //Return next row as an array indexed by column name
 // print("PDO::FETCH_ASSOC: ");
 // print("Return next row as an array indexed by column name\n");
@@ -48,8 +48,11 @@ $sth->setFetchMode(PDO::FETCH_ASSOC);
 <body>
 <?php while ($row = $sth->fetch()):?>
 <!--<p><?php // echo $row ['LocalURL'];?></p>-->
-<a href= "<?php echo $row ['LocalURL']?>"><?php echo $row['StationName'];?></a>
+<p>
+<!-- <a href= "<?php //echo $row ['LocalURL']?>"><?php //echo $row['StationName'];?></a> -->
+<a href="station.php?id=<?php echo $row['ID']?>"> <?php echo $row['StationName'];?></a>
 <a href= "<?php echo $row ['StreamURL']?>"><?php echo "Stream";?></a>
+</p>
 <?php endwhile; ?>
 </body>
 </html>
