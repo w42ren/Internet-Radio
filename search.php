@@ -27,7 +27,7 @@ $sth = $db->prepare("SELECT  ID,StationName,StreamURL FROM Stationpages WHERE  S
 //-run  the query against the mysql query function
 $sth->execute();
 
-echo "<ul>\n Internet Radio search results";
+// echo "<ul>\n Internet Radio search results";
 //Return next row as an array indexed by column name
 // print("PDO::FETCH_ASSOC: ");
 // print("Return next row as an array indexed by column name\n");
@@ -43,16 +43,35 @@ $sth->setFetchMode(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
   <html>
   <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> search results </title>
+  	<link rel="stylesheet"  type="text/css" href="fonts.css" >
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 <body>
-<?php while ($row = $sth->fetch()):?>
-<!--<p><?php // echo $row ['LocalURL'];?></p>-->
-<p>
-<!-- <a href= "<?php //echo $row ['LocalURL']?>"><?php //echo $row['StationName'];?></a> -->
-<a href="station.php?id=<?php echo $row['ID']?>"> <?php echo $row['StationName'];?></a>
-<a href= "<?php echo $row ['StreamURL']?>"><?php echo "Stream";?></a>
-</p>
-<?php endwhile; ?>
+  	<header>
+	Internet Radio Stations
+	</header>
+	
+	<nav><strong>Links</strong></nav>
+	
+	<section>
+	    <p> Internet Radio Search Results </p>
+		<?php while ($row = $sth->fetch()):?>
+		<!--<p><?php // echo $row ['LocalURL'];?></p>-->
+		<p>
+		<!-- <a href= "<?php //echo $row ['LocalURL']?>"><?php //echo $row['StationName'];?></a> -->
+		<a href="station.php?id=<?php echo $row['ID']?>"> <?php echo $row['StationName'];?></a>
+		<a href= "<?php echo $row ['StreamURL']?>"><?php echo "Stream";?></a>
+		</p>
+		<?php endwhile; ?>
+	</section>
+	<article>
+	<p> article goes here </p>
+	</article>
+	<footer>
+	<strong> Copyright Warren Earle </strong>
+	</footer>
 </body>
 </html>
