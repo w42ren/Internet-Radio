@@ -37,53 +37,16 @@ $station = $sth->fetch(PDO::FETCH_ASSOC);
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Internet Radio Stations</title>
-	<link rel="stylesheet" href="fonts.css" type="text/css" charset="utf-8" />
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<style type="text/css">
-	body {
-		background-color:white;
-		font-family:Verdana,Tahoma,Arial,Sans-Serif;
-		color:black;
-		font-size:12px;
-	}
-
-	header {
-		font-family:'Conv_TELETYPE1945-1985',Sans-Serif;
-		width:90%;
-		margin:10px auto ;
-		text-align:left;
-		padding:10px;
-	}
-
-	article {
-		font-family:'Conv_lmroman12-regular',Sans-Serif;
-		width:90%;
-		margin: auto;
-		text-align:left;
-		padding:10px;
-	}
-	nav {
-		font-family: font-family:'Conv_LucidaTypewriterRegular',Sans-Serif;
-		width:90%;
-		margin:10px auto;
-		text-align:left;
-		padding:10px;
-	}
-	footer {	
-		font-family:font-family:'Conv_LucidaTypewriterRegular',Sans-Serif;
-	    width:90%;
-		margin:10px auto;
-		text-align:left;
-		padding:10px;;
-	}
-	</style>
+	<link rel="stylesheet"  type="text/css" href="fonts.css" >
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	
 </head>
 <body>
  
 	<header style="font-size:25px">
 	Internet Radio Stations 
 	</header>
-
+	
 	<nav style="font-size:14px"><strong>Back</strong></nav>
 	<article style="font-size:14px">
 	
