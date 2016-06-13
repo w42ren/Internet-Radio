@@ -6,4 +6,17 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
+@font-face {
+	font-family: 'Conv_lmroman12-regular';
+	src: url('fonts/lmroman12-regular.eot');
+	src: local('☺'), url('fonts/lmroman12-regular.woff') format('woff'), url('fonts/lmroman12-regular.ttf') format('truetype'), url('fonts/lmroman12-regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_LucidaTypewriterRegular';
+	src: url('fonts/LucidaTypewriterRegular.eot');
+	src: local('☺'), url('fonts/LucidaTypewriterRegular.woff') format('woff'), url('fonts/LucidaTypewriterRegular.ttf') format('truetype'), url('fonts/LucidaTypewriterRegular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
