@@ -1,20 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.5
--- http://www.phpmyadmin.net
+-- version 4.7.7
+-- https://www.phpmyadmin.net/
 --
--- Host: sql5c25d.carrierzone.com
--- Generation Time: May 30, 2016 at 01:03 PM
--- Server version: 5.5.38-log
--- PHP Version: 5.3.28
+-- Host: sql5c25m.carrierzone.com
+-- Generation Time: Oct 08, 2018 at 11:16 AM
+-- Server version: 5.7.23-log
+-- PHP Version: 5.6.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `irstationtable_w42renf2sc957916`
@@ -26,8 +28,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `Stationpages`
 --
 
-CREATE TABLE IF NOT EXISTS `Stationpages` (
-  `ID` int(1) unsigned NOT NULL,
+CREATE TABLE `Stationpages` (
+  `ID` int(1) UNSIGNED NOT NULL,
   `StationName` text NOT NULL,
   `ContactURL` text NOT NULL,
   `WebURL` text NOT NULL,
@@ -38,8 +40,7 @@ CREATE TABLE IF NOT EXISTS `Stationpages` (
   `StationType` text NOT NULL,
   `Schedule` text NOT NULL,
   `ScheduleURL` text NOT NULL,
-  `Contact` text NOT NULL,
-  PRIMARY KEY (`ID`)
+  `Contact` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -53,7 +54,22 @@ INSERT INTO `Stationpages` (`ID`, `StationName`, `ContactURL`, `WebURL`, `Stream
 (4, 'Berlin Community Radio', 'bcr.html', 'http://www.berlincommunityradio.com/', 'http://berlincommunityradio.out.airtime.pro:8000/berlincommunityradio_b', 'Berlin, Germany', 'CET (UST+1)', 'Berlin Community Radio is an online broadcasting platform presenting everything that is coming from, passing through or influencing the creative scene in Berlin. BCR is home to over 100 shows covering a variety of topics: arts, music across genres, culture, relationships, queer politics, literature readings, feminism discussions, gender and internet phenomenons.\r\nIts aim is to bring together the continually evolving communities of the city and to establish a modern platform for cultural exchange. As well as a growing schedule of shows, the brand new BCR Zine features fresh lifestyle, fashion & art content editorials alongside music news.', 'cultural indie arts literature electronic idm community', '', '', '0'),
 (5, 'Resonance', 'resonance.html', 'https://resonancefm.com', 'http://stream.resonance.fm:8000/resonance', 'London, England', 'UST', 'Resonance is a community radio station run by volunteers. Its broadcasts 24/7 on 104.4 FM to central London. Its mission is to encourage the arts through the medium of radio. ', 'Arts\r\nCommunity\r\nVolunteer\r\n', '', 'https://resonancefm.com/schedule', '0'),
 (6, 'Resonance Extra', 'resonancex.html', 'https://extra.resonance.fm/', 'http://stream.resonance.fm:8000/resonance-extra', 'Brighton, England', 'UST', 'Resonance Extra is a pioneering new digital radio platform launched in December 2015, available on DAB to listeners in Central Brighton and online to the rest of the world. Dedicated foremost to the global artistic community and with a focus on long–form international music programming and sonic experimentation, Resonance Extra exists to mobilise diverse and emergent communities of sound artists, musicians, broadcasters, academics and expert curators.', 'Community\r\nArts\r\nCool', '', 'https://extra.resonance.fm/', '0'),
-(7, 'Unity 101', 'http://unity101.org/', 'http://unity101.org/', 'http://icecast.commedia.org.uk:8000/unity24.mp3', 'Southampton, England', 'UST', '"By the community, for the community and to the community". Our aim is to promote and broadcast music and culture of the Asian & ethnic communities of Southampton. To provide the training and skills required, so our volunteers and listeners are better able to participate more fully, in a cohesive society.', 'Community\r\nWorld\r\nAsian\r\nChinese\r\nPoland\r\nCultural\r\n', '', '', 'Tel: 02380 235055\nTel: 02380 221144\nEmail: studio@unity101.org\nTweet: @Unity101FM ');
+(7, 'Unity 101', 'http://unity101.org/', 'http://unity101.org/', 'http://icecast.commedia.org.uk:8000/unity24.mp3', 'Southampton, England', 'UST', '\"By the community, for the community and to the community\". Our aim is to promote and broadcast music and culture of the Asian & ethnic communities of Southampton. To provide the training and skills required, so our volunteers and listeners are better able to participate more fully, in a cohesive society.', 'Community\r\nWorld\r\nAsian\r\nChinese\r\nPoland\r\nCultural\r\n', '', '', 'Tel: 02380 235055\nTel: 02380 221144\nEmail: studio@unity101.org\nTweet: @Unity101FM '),
+(8, 'Heart FM', 'http://www.heart.co.uk/london/contact/', 'http://www.heart.co.uk/', 'http://media-ice.musicradio.com/HeartLondonMP3.m3u', 'London', 'UST', 'First launched in the West Midlands in 1994, Heart arrived in London in 1995.\r\n', 'Pop\r\nVariety\r\nNews', '', 'http://www.heart.co.uk/on-air/schedule/', '0345 481 11 11'),
+(9, 'Fallout FM', 'https://www.radionomy.com/en/radio/falloutfm/index', 'https://www.radionomy.com/en/radio/falloutfm/index', 'http://streaming.radionomy.com/FalloutFM?lang=en-GB%2cen-US%3bq%3d0.8%2cen%3bq%3d0.6', 'USA', 'UST', 'A station revolving around the music of Fallout, Bioshock, Mafia II, L.A. Noire & more! Literally a hub for the fans of the music heard in golden games, or the music itself! So drop that Galaxy News Radio playlist, and head on over to Fallout F.M.!', 'Boogie Woogie Blues Jazz Country\r\nAmericana USA', '', 'https://www.radionomy.com/en/radio/falloutfm/index', 'unknown'),
+(10, 'WNBC', '', 'http://www.wnbc.london/', 'https://tunein.com/radio/WNBCLONDON-s257666/?utm_source=tiEmbed&utm_medium=referral&utm_content=s257666', '20 Norwood High St, West Norwood, London SE27 9NR', 'UTC', 'This station broadcasts out of a book and record shop in West Norwood, South London', 'Alternative', '', '', '0208 670 9568 or 07971 265228\r\nthebookandrecordbar@gmail.com'),
+(11, 'Radio Wassoulou Internationale', 'http://radio-wassoulou-internationale.playtheradio.com/contact.cfm', 'http://radio-wassoulou-internationale.playtheradio.com/index.cfm', 'http://wassoulou.radio.net', 'Yanfolila\r\nWassoulou\r\nMali ', 'UTC', 'Traditional Music of the Wassalou Mali and Guinea\r\nThe station plays the music forms :\r\nManinka / Mandinka\r\nWassoulou\r\nBamana\r\nThe majority of the vocalists are women\r\n', 'World Music\r\nAfrican\r\nMali\r\nGuinea\r\nWassoulou\r\nMandinka\r\nManinka\r\nBamana\r\nBlues\r\n\r\n', 'N/A', 'http://wassoulou.radio.net/', 'N/A');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Stationpages`
+--
+ALTER TABLE `Stationpages`
+  ADD PRIMARY KEY (`ID`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
